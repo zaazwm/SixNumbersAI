@@ -22,6 +22,7 @@ public class Algorithm {
 			while(!fomula.isEmpty()) {
 				System.out.println(fomula.removeLast());
 			}
+			System.out.println("---------------------");
 		}
 	}
 	
