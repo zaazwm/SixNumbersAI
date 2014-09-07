@@ -43,6 +43,7 @@ public class Algorithm {
 					return true;
 				}
 				else {
+					if(!isInBuffer(res, buffer)) {
 					int[] nbuffer = new int[buffer.length-1];
 					int l=0;
 					for(int k=0;k<buffer.length;k++) {
@@ -58,6 +59,7 @@ public class Algorithm {
 						processed=true;
 						return true;
 					}
+					}
 				}
 				
 				if(buffer[i]!=1 && buffer[j]!=1) {
@@ -68,6 +70,7 @@ public class Algorithm {
 					return true;
 				}
 				else {
+					if(!isInBuffer(res, buffer)) {
 					int[] nbuffer = new int[buffer.length-1];
 					int l=0;
 					for(int k=0;k<buffer.length;k++) {
@@ -83,6 +86,7 @@ public class Algorithm {
 						processed=true;
 						return true;
 					}
+					}
 				}
 				}
 				
@@ -94,6 +98,7 @@ public class Algorithm {
 					return true;
 				}
 				else {
+					if(!isInBuffer(res, buffer)) {
 					int[] nbuffer = new int[buffer.length-1];
 					int l=0;
 					for(int k=0;k<buffer.length;k++) {
@@ -109,6 +114,7 @@ public class Algorithm {
 						processed=true;
 						return true;
 					}
+					}
 				}
 				}
 				
@@ -120,6 +126,7 @@ public class Algorithm {
 					return true;
 				}
 				else {
+					if(!isInBuffer(res, buffer)) {
 					int[] nbuffer = new int[buffer.length-1];
 					int l=0;
 					for(int k=0;k<buffer.length;k++) {
@@ -135,6 +142,7 @@ public class Algorithm {
 						processed=true;
 						return true;
 					}
+					}
 				}
 				}
 				
@@ -147,6 +155,7 @@ public class Algorithm {
 					return true;
 				}
 				else {
+					if(!isInBuffer(res, buffer)) {
 					int[] nbuffer = new int[buffer.length-1];
 					int l=0;
 					for(int k=0;k<buffer.length;k++) {
@@ -162,6 +171,7 @@ public class Algorithm {
 						processed=true;
 						return true;
 					}
+					}
 				}
 				}
 				}
@@ -175,6 +185,7 @@ public class Algorithm {
 						return true;
 					}
 					else {
+						if(!isInBuffer(res, buffer)) {
 						int[] nbuffer = new int[buffer.length-1];
 						int l=0;
 						for(int k=0;k<buffer.length;k++) {
@@ -191,6 +202,7 @@ public class Algorithm {
 							return true;
 						}
 					}
+					}
 				}
 				}
 				
@@ -198,6 +210,14 @@ public class Algorithm {
 			}
 		}
 		
+		return false;
+	}
+	
+	public static boolean isInBuffer(int res, int[] buffer) {
+		for(int i : buffer) {
+			if(res==i)
+				return true;
+		}
 		return false;
 	}
 }
