@@ -1,6 +1,8 @@
 import java.awt.FlowLayout;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -15,7 +17,7 @@ public class GUI {
 		mainwindow = new JFrame();
 		JPanel panel = new JPanel(new FlowLayout());
 		mainwindow.setTitle("6 Number AI");
-		mainwindow.setSize(300, 60);
+		mainwindow.setSize(400, 60);
 		//mainwindow.setLocation(100, 100);
 		mainwindow.setLocationRelativeTo(null);
 		panel.setSize(mainwindow.getSize());
@@ -26,8 +28,14 @@ public class GUI {
 		btn.addActionListener(new ButtonActionListener());
 		
 		panel.setVisible(true);
+		JLabel lbt = new JLabel("Input:");
+		panel.add(lbt);
+		lbt.setVisible(true);
 		panel.add(text);
 		text.setVisible(true);
+		JLabel lbtt = new JLabel("Target:");
+		panel.add(lbtt);
+		lbtt.setVisible(true);
 		panel.add(textt);
 		textt.setVisible(true);
 		panel.add(btn);
