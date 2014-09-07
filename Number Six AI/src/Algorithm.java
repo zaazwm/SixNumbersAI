@@ -86,6 +86,7 @@ public class Algorithm {
 				}
 				}
 				
+				if(buffer[i]>buffer[j]) {
 				res=buffer[i]-buffer[j]; //minus
 				if(res==target) {
 					fomula.add(buffer[i]+"-"+buffer[j]+"="+res);
@@ -109,7 +110,9 @@ public class Algorithm {
 						return true;
 					}
 				}
+				}
 				
+				if(buffer[j]>buffer[i]) {
 				res=buffer[j]-buffer[i]; //inv-minus
 				if(res==target) {
 					fomula.add(buffer[j]+"-"+buffer[i]+"="+res);
@@ -132,6 +135,7 @@ public class Algorithm {
 						processed=true;
 						return true;
 					}
+				}
 				}
 				
 				if(buffer[j]!=1) {
