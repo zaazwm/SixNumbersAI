@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.Scanner;
 
 
 
@@ -219,5 +220,30 @@ public class Algorithm {
 				return true;
 		}
 		return false;
+	}
+	
+	public static void main(String[] args) {
+		String inp = new String();
+		Scanner scanner = new Scanner( System.in );
+		while((inp=scanner.nextLine()) != null) {
+			String[] s = inp.split(" ");
+			if(s[0].toLowerCase().equals("exit") || s[0].toLowerCase().equals("quit")) {
+				break;
+			}
+			int count=0;
+			int[] input = new int[6];
+			int target=0;
+			for(String ss : s) {
+				if(count<6)
+					input[count]=new Integer(ss).intValue();
+				else {
+					target=new Integer(ss).intValue();
+					break;
+				}
+				count++;
+			}
+			run(input,target);
+		}
+		scanner.close();
 	}
 }
