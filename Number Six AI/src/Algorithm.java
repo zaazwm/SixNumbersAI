@@ -225,6 +225,7 @@ public class Algorithm {
 	public static void main(String[] args) {
 		String inp = new String();
 		Scanner scanner = new Scanner( System.in );
+		System.out.println("e.g. 1 2 3 4 5 6 40\n[input]x6 [target]\ntype 'exit' or 'quit' to quit");
 		while((inp=scanner.nextLine()) != null) {
 			String[] s = inp.split(" ");
 			if(s[0].toLowerCase().equals("exit") || s[0].toLowerCase().equals("quit")) {
