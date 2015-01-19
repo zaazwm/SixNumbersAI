@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Algorithm {
 	private static boolean processed;
 	private static LinkedList<String> fomula;
+	public static boolean onGUI;
 	
 	public static void run(int input[], int target) {
 		fomula=new LinkedList<String>();
@@ -17,13 +18,25 @@ public class Algorithm {
 		//System.out.print("\n");
 		processed=false;
 		boolean fin = inner(buffer, target);
-		if(!fin)
-			System.out.println("No Result Found");
-		else {
-			while(!fomula.isEmpty()) {
-				System.out.println(fomula.removeLast());
+		if(!onGUI) {
+			if (!fin)
+				System.out.println("No Result Found");
+			else {
+				while (!fomula.isEmpty()) {
+					System.out.println(fomula.removeLast());
+				}
+				System.out.println("---------------------");
 			}
-			System.out.println("---------------------");
+		}
+		else {
+			if (!fin)
+				GUI.texto.setText("No Result Found");
+			else {
+				while (!fomula.isEmpty()) {
+					GUI.texto.append(fomula.removeLast()+"\n");
+				}
+				//System.out.println("---------------------");
+			}
 		}
 	}
 	
@@ -223,6 +236,7 @@ public class Algorithm {
 	}
 	
 	public static void main(String[] args) {
+		onGUI=false;
 		String inp = new String();
 		Scanner scanner = new Scanner( System.in );
 		System.out.println("e.g. 1 2 3 4 5 6 40\n[input]x6 [target]\ntype 'exit' or 'quit' to quit");

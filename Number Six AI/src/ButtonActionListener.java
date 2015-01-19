@@ -15,6 +15,8 @@ public class ButtonActionListener implements ActionListener,KeyListener {
 			i++;
 		}
 		int target =new Integer(GUI.textt.getText()).intValue();
+		GUI.texto.setText("");
+
 		Algorithm.run(in, target);
 		
 		
